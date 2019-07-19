@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 872177675
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: ui.mainui.cn_mainui.prefab
+      Dependencies: {}
+    Info_1:
+      Name: ui.stadium.cn_stadium.prefab
+      Dependencies: {}
+    Info_2:
+      Name: model.cn_tiles.prefab
+      Dependencies: {}
+    Info_3:
+      Name: ui.loginui.cn_loginui.prefab
+      Dependencies: {}
+    Info_4:
+      Name: model.cheqiyu.cn_cheqiyu.prefab
+      Dependencies: {}

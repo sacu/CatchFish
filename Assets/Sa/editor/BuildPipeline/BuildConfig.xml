@@ -1,0 +1,43 @@
+﻿<config 
+    productName = "星际传奇" 
+	
+    adtPackageName		= "com.longtugame.starlegend" 
+    iosBundleIdentifier	= "com.longtugame.xjcq" 
+	
+    bugReportUrl		= "http://bugreport.s.longtugame.com/upload.php" 
+    bugMaxLength		= "20480"
+    
+    cdn_dev				= "http://120.55.150.225/s/dev/version.bin;http://cdn.s.longtugame.com/s/dev/version.bin"
+    
+    cdn_android_mix		= "http://120.55.150.225/s/android_mix/version.bin;http://cdn.s.longtugame.com/s/android_mix/version.bin"
+    cdn_android_360		= "http://120.55.150.225/s/android_360/version.bin;http://cdn.s.longtugame.com/s/android_360/version.bin"
+    cdn_android_tencent	= "http://120.55.150.225/s/android_tencent/version.bin;http://cdn.s.longtugame.com/s/android_tencent/version.bin"
+    cdn_android_xiaomi  = "http://120.55.150.225/s/android_xiaomi/version.bin;http://cdn.s.longtugame.com/s/android_xiaomi/version.bin"
+    
+    cdn_iosjb_mix		= "http://120.55.150.225/s/iosjb_mix/version.bin;http://cdn.s.longtugame.com/s/iosjb_mix/version.bin"
+    cdn_ios_appstore	= "http://120.55.150.225/s/ios_appstore/version.bin;http://cdn.s.longtugame.com/s/ios_appstore/version.bin"
+/>
+
+<!-- 
+cdn_dev:
+内网开发
+
+cdn_android_mix:
+安卓混服渠道, 比如龙图自营、豌豆荚、金立、oppo等等
+
+cdn_android_360:
+android 360渠道
+
+cdn_android_tencent:
+android 应用宝渠道
+
+cdn_android_xiaomi:
+android 小米渠道
+
+cdn_iosjb_mix:
+iOS越狱混服, 比如: pp助手, 同步推
+
+cdn_ios_appstore:
+苹果官方
+
+-->

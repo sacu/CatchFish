@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="gb2312"?>
+<ioc>
+  <factory name="AssetBundleRemoteFactory" defaultStart="true">
+    <worker name="UI.AssetLoad.AssetBundleRemote" isLocal="true" defaultStart="true" type="graph" isActiveDispose="true"/>
+  </factory>
+  <factory name="LoginUIFactory" defaultStart="false">
+    <worker name="UI.LoginUI.LoginUI" isLocal="false" defaultStart="true" type="graph" isActiveDispose="true"/>
+    <worker name="Datas.SocketDataWorker" command=".sock" type="data"/>
+  </factory>
+  <factory name="MainUIFactory" defaultStart="false">
+    <worker name="UI.MainUI.MainUI" isLocal="false" defaultStart="true" type="graph" isActiveDispose="true"/>
+    <worker name="Datas.SocketDataWorker" command=".sock" type="data"/>
+  </factory>
+  <factory name="StadiumFactory" defaultStart="false">
+    <worker name="UI.Stadium.Stadium" isLocal="false" defaultStart="true" type="graph" isActiveDispose="true"/>
+    <worker name="Datas.SocketDataWorker" command=".sock" type="data"/>
+  </factory>
+  <!--Console factory-->
+  <factory name="ConsoleUIFactory" defaultStart="false">
+    <worker name="Datas.SocketDataWorker" command=".sock" type="data"/>
+    <worker name="UI.ConsoleUI.ConsoleUI" isLocal="false" defaultStart="true" type="graph" isActiveDispose="true"/>
+  </factory>
+</ioc>
+
+<!--
+
+移除  isDestroy
+关于彻底资源释放，参考 Facotry.destroyFactory(SAGraphWorker graph)
+
+-->

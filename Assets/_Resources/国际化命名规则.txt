@@ -1,0 +1,12 @@
+通过前缀确认国际化版本，所有资源名字加前缀
+范例：en_Heart.prefab
+完整路径 Assets/_Resources/UI/Heart/en_Heart.prefab
+
+国际化前缀对应：
+
+语言			前缀
+
+英语			en
+中文			cn
+韩语			ko
+

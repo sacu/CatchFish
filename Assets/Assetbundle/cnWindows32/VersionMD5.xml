@@ -1,0 +1,17 @@
+<Files>
+  <File FileName="cnWindows32/cnWindows32" MD5="E1-F3-5D-EB-8D-5B-E4-3B-D5-D9-46-6A-0F-96-19-DD" />
+  <File FileName="cnWindows32/cnWindows32.manifest" MD5="CE-3B-1B-5B-7B-50-85-7C-E7-0F-A6-CF-69-B6-B8-62" />
+  <File FileName="cnWindows32/cn_lua.bytes" MD5="EC-3F-CF-7D-91-CF-D9-78-1C-D4-29-D6-C1-D1-65-35" />
+  <File FileName="cnWindows32/fbx.cn_cheqiyu2.prefab" MD5="3D-31-D2-9E-58-B0-80-D2-34-36-ED-4A-B7-95-78-B9" />
+  <File FileName="cnWindows32/fbx.cn_cheqiyu2.prefab.manifest" MD5="CD-83-68-F5-86-6E-73-8B-D2-40-D9-7B-B9-BE-90-00" />
+  <File FileName="cnWindows32/model.cheqiyu.cn_cheqiyu.prefab" MD5="18-87-1F-CB-F7-A2-C2-16-AF-17-77-DE-8C-09-02-1C" />
+  <File FileName="cnWindows32/model.cheqiyu.cn_cheqiyu.prefab.manifest" MD5="D4-04-6A-6D-A3-4B-CC-9D-6A-1C-B2-2E-73-E8-11-20" />
+  <File FileName="cnWindows32/model.cn_tiles.prefab" MD5="2D-80-2B-55-5C-87-85-12-02-FC-8B-B4-BE-7A-94-14" />
+  <File FileName="cnWindows32/model.cn_tiles.prefab.manifest" MD5="BF-86-F2-76-0B-55-DE-F7-14-2F-0E-89-D4-11-A1-08" />
+  <File FileName="cnWindows32/ui.loginui.cn_loginui.prefab" MD5="B2-FA-F1-FB-77-65-92-E2-DC-9A-CF-6F-4D-0E-B1-33" />
+  <File FileName="cnWindows32/ui.loginui.cn_loginui.prefab.manifest" MD5="BF-0D-94-B8-21-90-19-56-D8-08-B1-04-7E-CA-A2-20" />
+  <File FileName="cnWindows32/ui.mainui.cn_mainui.prefab" MD5="92-3C-F4-B3-23-29-A5-5D-12-78-34-11-9C-57-8E-2D" />
+  <File FileName="cnWindows32/ui.mainui.cn_mainui.prefab.manifest" MD5="67-E8-91-46-AA-0F-45-E3-7F-B6-35-DA-A2-16-51-68" />
+  <File FileName="cnWindows32/ui.stadium.cn_stadium.prefab" MD5="6F-7C-01-A4-09-14-81-CC-51-4F-92-CF-DA-4A-B5-00" />
+  <File FileName="cnWindows32/ui.stadium.cn_stadium.prefab.manifest" MD5="22-EF-7F-4A-DE-2B-E0-FC-D4-4B-BE-9B-1C-01-8E-32" />
+</Files>

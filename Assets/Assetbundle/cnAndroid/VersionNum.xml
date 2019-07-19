@@ -1,0 +1,17 @@
+<VersionNum>
+  <File FileName="cnAndroid/cnAndroid" Num="2" />
+  <File FileName="cnAndroid/cnAndroid.manifest" Num="2" />
+  <File FileName="cnAndroid/cn_lua.bytes" Num="3" />
+  <File FileName="cnAndroid/fbx.cn_cheqiyu2.prefab" Num="1" />
+  <File FileName="cnAndroid/fbx.cn_cheqiyu2.prefab.manifest" Num="1" />
+  <File FileName="cnAndroid/model.cn_tiles.prefab" Num="1" />
+  <File FileName="cnAndroid/model.cn_tiles.prefab.manifest" Num="1" />
+  <File FileName="cnAndroid/ui.loginui.cn_loginui.prefab" Num="1" />
+  <File FileName="cnAndroid/ui.loginui.cn_loginui.prefab.manifest" Num="1" />
+  <File FileName="cnAndroid/ui.mainui.cn_mainui.prefab" Num="1" />
+  <File FileName="cnAndroid/ui.mainui.cn_mainui.prefab.manifest" Num="1" />
+  <File FileName="cnAndroid/ui.stadium.cn_stadium.prefab" Num="1" />
+  <File FileName="cnAndroid/ui.stadium.cn_stadium.prefab.manifest" Num="1" />
+  <File FileName="cnAndroid/model.cheqiyu.cn_cheqiyu.prefab" Num="1" />
+  <File FileName="cnAndroid/model.cheqiyu.cn_cheqiyu.prefab.manifest" Num="1" />
+</VersionNum>

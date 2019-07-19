@@ -1,0 +1,17 @@
+<VersionNum>
+  <File FileName="cnWindows32/cnWindows32" Num="2" />
+  <File FileName="cnWindows32/cnWindows32.manifest" Num="2" />
+  <File FileName="cnWindows32/cn_lua.bytes" Num="1" />
+  <File FileName="cnWindows32/fbx.cn_cheqiyu2.prefab" Num="1" />
+  <File FileName="cnWindows32/fbx.cn_cheqiyu2.prefab.manifest" Num="1" />
+  <File FileName="cnWindows32/model.cn_tiles.prefab" Num="1" />
+  <File FileName="cnWindows32/model.cn_tiles.prefab.manifest" Num="1" />
+  <File FileName="cnWindows32/ui.loginui.cn_loginui.prefab" Num="1" />
+  <File FileName="cnWindows32/ui.loginui.cn_loginui.prefab.manifest" Num="1" />
+  <File FileName="cnWindows32/ui.mainui.cn_mainui.prefab" Num="1" />
+  <File FileName="cnWindows32/ui.mainui.cn_mainui.prefab.manifest" Num="1" />
+  <File FileName="cnWindows32/ui.stadium.cn_stadium.prefab" Num="1" />
+  <File FileName="cnWindows32/ui.stadium.cn_stadium.prefab.manifest" Num="1" />
+  <File FileName="cnWindows32/model.cheqiyu.cn_cheqiyu.prefab" Num="1" />
+  <File FileName="cnWindows32/model.cheqiyu.cn_cheqiyu.prefab.manifest" Num="1" />
+</VersionNum>

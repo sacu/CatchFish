@@ -1,0 +1,17 @@
+<Files>
+  <File FileName="cnAndroid/cnAndroid" MD5="7B-ED-23-8F-CC-FF-51-88-13-F0-12-7A-0F-C5-A1-DD" />
+  <File FileName="cnAndroid/cnAndroid.manifest" MD5="E6-FE-22-72-E2-48-F9-7F-6B-2B-C5-10-92-BA-07-AC" />
+  <File FileName="cnAndroid/cn_lua.bytes" MD5="EC-3F-CF-7D-91-CF-D9-78-1C-D4-29-D6-C1-D1-65-35" />
+  <File FileName="cnAndroid/fbx.cn_cheqiyu2.prefab" MD5="9D-37-70-38-EF-15-53-19-C3-35-B7-39-FE-B5-FD-44" />
+  <File FileName="cnAndroid/fbx.cn_cheqiyu2.prefab.manifest" MD5="B6-48-44-98-EA-FE-7C-32-6B-E8-6C-94-BA-E6-0C-11" />
+  <File FileName="cnAndroid/model.cheqiyu.cn_cheqiyu.prefab" MD5="9F-3E-38-AE-CA-02-84-1A-F9-DA-88-D9-7F-70-37-1F" />
+  <File FileName="cnAndroid/model.cheqiyu.cn_cheqiyu.prefab.manifest" MD5="62-B0-74-B5-32-F2-03-1A-50-07-7F-C8-D1-42-1E-41" />
+  <File FileName="cnAndroid/model.cn_tiles.prefab" MD5="99-B8-EA-13-ED-3F-41-BF-B5-50-37-E8-8F-44-53-26" />
+  <File FileName="cnAndroid/model.cn_tiles.prefab.manifest" MD5="DC-75-84-D8-1D-42-5F-2D-67-64-51-3F-E2-A5-0E-96" />
+  <File FileName="cnAndroid/ui.loginui.cn_loginui.prefab" MD5="00-F0-17-14-83-BC-75-80-1A-E1-38-7A-08-82-EE-BD" />
+  <File FileName="cnAndroid/ui.loginui.cn_loginui.prefab.manifest" MD5="D0-46-A8-74-DA-64-DF-CE-AF-A0-D5-FB-E7-14-32-97" />
+  <File FileName="cnAndroid/ui.mainui.cn_mainui.prefab" MD5="C2-A8-37-A5-AD-4B-9B-A1-82-5E-04-FD-04-E3-95-C9" />
+  <File FileName="cnAndroid/ui.mainui.cn_mainui.prefab.manifest" MD5="45-78-BF-61-98-CF-91-D1-0F-14-4B-38-C0-8C-8C-1A" />
+  <File FileName="cnAndroid/ui.stadium.cn_stadium.prefab" MD5="D8-4C-85-3B-84-D8-E0-41-F0-08-19-30-46-2B-9A-C4" />
+  <File FileName="cnAndroid/ui.stadium.cn_stadium.prefab.manifest" MD5="C2-6C-F7-8D-5C-7F-4B-F4-4C-26-50-09-FA-D0-E6-BE" />
+</Files>

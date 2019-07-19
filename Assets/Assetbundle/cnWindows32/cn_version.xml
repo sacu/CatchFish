@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312"?>
+<root>
+  <!--
+  <ip>10.0.0.10</ip>
+  <port>9999</port>
+  <asset_ip>10.0.0.10</asset_ip>
+  <asset_android_port>8198</asset_android_port>
+  <asset_ios_port>8198</asset_ios_port>
+  -->
+  <ip>127.0.0.1</ip>
+  <port>9999</port>
+  <asset_ip>127.0.0.1</asset_ip>
+  <asset_android_port>80</asset_android_port>
+  <asset_ios_port>80</asset_ios_port>
+  <ioc_version>6</ioc_version>
+  <data_version>6</data_version>
+  <resources_version>6</resources_version>
+  <language>cn</language>
+</root>
