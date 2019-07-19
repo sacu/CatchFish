@@ -10,6 +10,12 @@
 
 
 unity git
+初始设置
 git config --global core.autocrlf false  //禁用自动转换 
-git init  
-git add .
+git init
+git remote add origin https://github.com/sacu/CatchFish.git
+
+每次提交设置
+git add 文件或目录
+git commit -m "注释"
+git push -u origin master	//提交文件
