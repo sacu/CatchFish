@@ -1,0 +1,15 @@
+1.针对xlua修改框架，调试socket
+2.解决动画问题(使用animator，并添加状态机)
+3.调试打包程序（包括：lua加解密、prefab、动作等）
+3.制作临时登陆界面
+4.制作临时大厅
+5.制作临时战场
+6.不同级别的子弹特效
+7.鱼的被击和死亡，击杀帐号奖励
+
+
+
+unity git
+git config --global core.autocrlf false  //禁用自动转换 
+git init  
+git add .
