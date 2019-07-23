@@ -107,7 +107,15 @@ namespace Sacu.Utils
         //Lua
 		public static string LuaPathName = Language + "_lua.bytes";
         //############################### 发布资源获得路径(开发目录)Resources
-		public static string DevDir = Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length);
+		public static string DevDir = 
+#if UNITY_STANDALONE_OSX
+		"file://" +
+#elif UNITY_STANDALONE_WIN
+		"file:///" +
+#else
+		"" +
+#endif
+		Application.dataPath.Substring(0, Application.dataPath.Length - "Assets".Length);
         public static string LocalDevDir = "Assets/_Resources/";
         //res dir
 		public static string DevResDir = Path.Combine(DevDir, LocalDevDir);

@@ -90,11 +90,11 @@ namespace Sacu.Utils
             if (!PlayerPrefs.HasKey("ioc_version") || PlayerPrefs.GetInt("ioc_version") != SAGameVersion.Instance.ioc_version)
             {
                 string random = DateTime.Now.ToString("yyyymmddhhmmss");
-                string versionFile = (SAAppConfig.ConfigRelease ? SAAppConfig.VersionPath : "file:///" + SAAppConfig.DevResDir + SAAppConfig.DataDir) + SAAppConfig.iocXML + "?rd=" + random;
+                string versionFile = (SAAppConfig.ConfigRelease ? SAAppConfig.VersionPath : SAAppConfig.DevResDir + SAAppConfig.DataDir) + SAAppConfig.iocXML + "?rd=" + random;
                 WWW www = new WWW(versionFile);
                 SAUtils.Log(versionFile);
                 yield return www;
-                if (www.error != null)
+				if (www.error != null && www.error.Length > 0)
                 {
                     SAUtils.LogError("error : " + www.error);
                     yield break;
