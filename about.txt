@@ -1,43 +1,43 @@
-1.Õë¶ÔxluaĞŞ¸Ä¿ò¼Ü£¬µ÷ÊÔsocket
-2.½â¾ö¶¯»­ÎÊÌâ(Ê¹ÓÃanimator£¬²¢Ìí¼Ó×´Ì¬»ú)
-3.µ÷ÊÔ´ò°ü³ÌĞò£¨°üÀ¨£ºlua¼Ó½âÃÜ¡¢prefab¡¢¶¯×÷µÈ£©
-3.ÖÆ×÷ÁÙÊ±µÇÂ½½çÃæ
-4.ÖÆ×÷ÁÙÊ±´óÌü
-5.ÖÆ×÷ÁÙÊ±Õ½³¡
-6.²»Í¬¼¶±ğµÄ×Óµ¯ÌØĞ§
-7.ÓãµÄ±»»÷ºÍËÀÍö£¬»÷É±ÕÊºÅ½±Àø
+1.é’ˆå¯¹xluaä¿®æ”¹æ¡†æ¶ï¼Œè°ƒè¯•socket
+2.è§£å†³åŠ¨ç”»é—®é¢˜(ä½¿ç”¨animatorï¼Œå¹¶æ·»åŠ çŠ¶æ€æœº)
+3.è°ƒè¯•æ‰“åŒ…ç¨‹åºï¼ˆåŒ…æ‹¬ï¼šluaåŠ è§£å¯†ã€prefabã€åŠ¨ä½œç­‰ï¼‰
+3.åˆ¶ä½œä¸´æ—¶ç™»é™†ç•Œé¢
+4.åˆ¶ä½œä¸´æ—¶å¤§å…
+5.åˆ¶ä½œä¸´æ—¶æˆ˜åœº
+6.ä¸åŒçº§åˆ«çš„å­å¼¹ç‰¹æ•ˆ
+7.é±¼çš„è¢«å‡»å’Œæ­»äº¡ï¼Œå‡»æ€å¸å·å¥–åŠ±
 
 
 
-mac os ¸üĞÂ git
-±ÜÃâgit¿ÉÓÃ´æ´¢¿Õ¼ä²»×ã
+mac os æ›´æ–° git
+é¿å…gitå¯ç”¨å­˜å‚¨ç©ºé—´ä¸è¶³
 git config --global http.postBuffer 1048576000
-±ÜÃâ´ø¿í¹ıµÍµ¼ÖÂ´«ÊäÖĞ¶Ï
+é¿å…å¸¦å®½è¿‡ä½å¯¼è‡´ä¼ è¾“ä¸­æ–­
 git config --global http.lowSpeedLimit 0
 git config --global http.lowSpeedTime 999999
 
-¹ØÓÚHomeBrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 	//É¾³ıHomeBrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"	//°²×°HomeBrew
-¸üĞÂgit
+å…³äºHomeBrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 	//åˆ é™¤HomeBrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"	//å®‰è£…HomeBrew
+æ›´æ–°git
 brew install git
-ÖØĞÂÖ¸ÏòĞÂ°²×°µÄgit
+é‡æ–°æŒ‡å‘æ–°å®‰è£…çš„git
 brew link git --overwrite
 
 unity git
-³õÊ¼ÉèÖÃ
-git config --global core.autocrlf false  //½ûÓÃ×Ô¶¯×ª»» 
+åˆå§‹è®¾ç½®
+git config --global core.autocrlf false  //ç¦ç”¨è‡ªåŠ¨è½¬æ¢ 
 git init
 git remote add origin https://github.com/sacu/CatchFish.git
 
-git pull https://github.com/sacu/CatchFish.git	//»ñÈ¡µØÖ·Êı¾İ
+git pull https://github.com/sacu/CatchFish.git	//è·å–åœ°å€æ•°æ®
 
-Ã¿´ÎÌá½»ÉèÖÃ
-git add ÎÄ¼ş»òÄ¿Â¼
-git commit -m "×¢ÊÍ"
-git push -u origin master	//Ìá½»ÎÄ¼ş
+æ¯æ¬¡æäº¤è®¾ç½®
+git add æ–‡ä»¶æˆ–ç›®å½•
+git commit -m "æ³¨é‡Š"
+git push -u origin master	//æäº¤æ–‡ä»¶
 
-Ç¿ÖÆ»ñÈ¡Ô¶³Ì¸²¸Ç±¾µØ
+å¼ºåˆ¶è·å–è¿œç¨‹è¦†ç›–æœ¬åœ°
 git fetch --all
 git reset --hard origin/master 
 git pull
