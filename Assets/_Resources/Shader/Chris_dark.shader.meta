@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e91501078174bbc4c80823e237ae8596
+timeCreated: 1479805650
+licenseType: Pro
+ShaderImporter:
+  defaultTextures:
+  - _eye_fire_mask2: {fileID: 2800000, guid: 323881aed7d272641a5deafee87c29f3, type: 3}
+  - _node_2268: {fileID: 2800000, guid: 94a1414d81ebc8e40aa4c628ea02048a, type: 3}
+  - _eye_fire_mask1: {fileID: 2800000, guid: 323881aed7d272641a5deafee87c29f3, type: 3}
+  - _eye_mask: {fileID: 2800000, guid: badaa3334ead53b4f90126476a039d0e, type: 3}
+  - _glow_dark: {fileID: 2800000, guid: 1289a8d510dd0894fa8c3e30833a945f, type: 3}
+  - _xian: {fileID: 2800000, guid: 77a7dfdec01d1b24fa95a5bf73d6466e, type: 3}
+  - _lizi3: {fileID: 2800000, guid: 474bbb53c85dc7e48ae334433d270a64, type: 3}
+  - _lizi_mask: {fileID: 2800000, guid: 14339020d3001ed4eb6328d0023c14a4, type: 3}
+  - _raoluan2: {fileID: 2800000, guid: 94a1414d81ebc8e40aa4c628ea02048a, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

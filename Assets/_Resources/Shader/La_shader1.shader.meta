@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b264493398611ce468ba80c094737606
+timeCreated: 1480043651
+licenseType: Pro
+ShaderImporter:
+  defaultTextures:
+  - _la_kuijia: {fileID: 2800000, guid: aafa476b79a8d3c408c2e9ada850e342, type: 3}
+  - _la_baoshi1: {fileID: 2800000, guid: a8c660d4163ab724e85feac54373a52d, type: 3}
+  - _la_baoshi2: {fileID: 2800000, guid: f6faf0822d8407c4f89a529ab87f1dd8, type: 3}
+  - _node_4367: {fileID: 2800000, guid: abe26fa1c790d8a41b07ddccb95c1b65, type: 3}
+  - _node_2184: {fileID: 2800000, guid: 1291156526e2fc74a8272d5c01f7e447, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

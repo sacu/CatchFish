@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 33db5758730ecb14e8745d56d8c380cb
+timeCreated: 1479541042
+licenseType: Pro
+ShaderImporter:
+  defaultTextures:
+  - _hela_fazhen: {fileID: 2800000, guid: 14f5741024efa134f9de3af90f4c1eb3, type: 3}
+  - _hela_fazhen_mash: {fileID: 2800000, guid: da78b8b0dc40e8d41bbbc6793c22789e, type: 3}
+  - _node_3303: {fileID: 2800000, guid: 8bee1c3ed5b27ea479c483d67f128d73, type: 3}
+  - _Heal_fazhen_mask: {fileID: 2800000, guid: 71921532e7297074aafca97e813d650a, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

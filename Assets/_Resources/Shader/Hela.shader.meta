@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: c1448942e9471c94893bfad317c258b7
+timeCreated: 1479541563
+licenseType: Pro
+ShaderImporter:
+  defaultTextures:
+  - _Hela_mask_1: {fileID: 2800000, guid: 85092a8030e559a45a23e5dd495ae271, type: 3}
+  - _node_1992: {fileID: 2800000, guid: 474bbb53c85dc7e48ae334433d270a64, type: 3}
+  - _Hela_mask_2: {fileID: 2800000, guid: 85092a8030e559a45a23e5dd495ae271, type: 3}
+  - _Hela_eye: {fileID: 2800000, guid: af1402e75edb89643a166e39d97b25a9, type: 3}
+  - _Hela_liuguang_mask: {fileID: 2800000, guid: ea0e3c5a40f7cb348aa5449def6ec791,
+      type: 3}
+  - _Hela_liuguang_text: {fileID: 2800000, guid: 94a1414d81ebc8e40aa4c628ea02048a,
+      type: 3}
+  - _Hela_eye_lizi_mask: {fileID: 2800000, guid: 37431b0e9651c464d875a8d1d4aaab4f,
+      type: 3}
+  - _Hela_eye_lizi_text_1: {fileID: 2800000, guid: c9cf0f04b32393d46bbd6b24016bd4c1,
+      type: 3}
+  - _Hela_eye_lizi_text_2: {fileID: 2800000, guid: c9cf0f04b32393d46bbd6b24016bd4c1,
+      type: 3}
+  - _hela_rump: {fileID: 2800000, guid: 14339020d3001ed4eb6328d0023c14a4, type: 3}
+  - _node_137: {fileID: 2800000, guid: 28c7aad1372ff114b90d330f8a2dd938, type: 3}
+  - _node_137_copy: {fileID: 2800000, guid: 2a27c1714fa376441804d58536200d67, type: 3}
+  - _Hela_buff: {fileID: 2800000, guid: c88a497fe97ef964e86eb20dd9c66c5b, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

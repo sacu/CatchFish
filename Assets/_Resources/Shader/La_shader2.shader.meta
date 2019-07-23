@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 53abdfa695c5bd24aa40cefc14ab7263
+timeCreated: 1480043661
+licenseType: Pro
+ShaderImporter:
+  defaultTextures:
+  - _la_mask: {fileID: 2800000, guid: 676203b82dc51e54e8cb883efa555b80, type: 3}
+  - _lizi: {fileID: 2800000, guid: 4be441e3f46663742b7a4e7cd2bd6a71, type: 3}
+  - _mask: {fileID: 2800000, guid: c80d2242d22fa34418cfa998c7b5b066, type: 3}
+  - _kapai_noise: {fileID: 2800000, guid: 7e4f78751982fbd4db2848b67685b9c9, type: 3}
+  - _kapai_mask: {fileID: 2800000, guid: 1291156526e2fc74a8272d5c01f7e447, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 654588570cd06e6458f167e36a2302ab
+ShaderImporter:
+  defaultTextures:
+  - _mask_bian: {fileID: 2800000, guid: c41d76acf2e2c774c8ddb3323568e044, type: 3}
+  - _guangtiao: {fileID: 2800000, guid: 6633457ab665f0b4b99e8d527c97a52c, type: 3}
+  - _mask: {fileID: 2800000, guid: aa909927de1302742afaa588d5b74d65, type: 3}
+  - _wenli: {fileID: 2800000, guid: bc89dc67c2ea8934d91c27fb62d8c725, type: 3}
+  - _node_8500: {fileID: 2800000, guid: 9e51d1c659336524193b8a38a1a26e00, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

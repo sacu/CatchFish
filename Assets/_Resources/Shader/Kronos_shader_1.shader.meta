@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 119f7ef283aa2bf4fb54a306dcc32a48
+timeCreated: 1479554067
+licenseType: Pro
+ShaderImporter:
+  defaultTextures:
+  - _toukui_mask: {fileID: 2800000, guid: 0123fb6f420c21844919c437cd6e2f52, type: 3}
+  - _yan_mask: {fileID: 2800000, guid: e9723410d0bdc31488f982546b81d8e5, type: 3}
+  - _yan_mask_rl: {fileID: 2800000, guid: 2bd3fc7fe7f590d4bb5517e0f6af270e, type: 3}
+  - _yan_tex_rl: {fileID: 2800000, guid: 2bd3fc7fe7f590d4bb5517e0f6af270e, type: 3}
+  - _toutui_lg: {fileID: 2800000, guid: 2bd3fc7fe7f590d4bb5517e0f6af270e, type: 3}
+  - _node_8595: {fileID: 2800000, guid: 65033e6c8d654ab45841d3f0b0d560ca, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

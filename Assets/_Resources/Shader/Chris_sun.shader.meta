@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 13ada7d8c0a11374ea42c8dfaeeaf868
+timeCreated: 1479805850
+licenseType: Pro
+ShaderImporter:
+  defaultTextures:
+  - _sun1: {fileID: 2800000, guid: 44e4cca5fe51a92449c639073cf07f38, type: 3}
+  - _lizi1: {fileID: 2800000, guid: 3c4e5d9e1d69ac049803c9f1b7a25142, type: 3}
+  - _lizi2: {fileID: 2800000, guid: 1a10807a6549a484587ee0dd7c8829fc, type: 3}
+  - _Chris_lizi_mask: {fileID: 2800000, guid: 2aa1e1154a214a14c9d5c63e1376682e, type: 3}
+  - _node_6929: {fileID: 2800000, guid: a14462002e8c29941b1a75151c12c263, type: 3}
+  - _glow: {fileID: 2800000, guid: 1289a8d510dd0894fa8c3e30833a945f, type: 3}
+  - _liuguang_mask: {fileID: 2800000, guid: 8b546993fcbcffb448c8f73e109dee2b, type: 3}
+  - _liuguang: {fileID: 2800000, guid: 474bbb53c85dc7e48ae334433d270a64, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

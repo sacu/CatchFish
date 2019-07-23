@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7ffe3ae3c93649242b41404bfe33fc87
+timeCreated: 1479552441
+licenseType: Pro
+ShaderImporter:
+  defaultTextures:
+  - _odin_light_mask: {fileID: 2800000, guid: c27c494c69d2bfc4baa820205c013d67, type: 3}
+  - _idin_fog: {fileID: 2800000, guid: af7f129efe55b714bb08434496f4ae9e, type: 3}
+  - _odin_light_tex: {fileID: 2800000, guid: 28c7aad1372ff114b90d330f8a2dd938, type: 3}
+  - _liuguang_mask: {fileID: 2800000, guid: 723c0675ae0367d4ab140a4e7f116a07, type: 3}
+  - _liuguang_caizhi: {fileID: 2800000, guid: 474bbb53c85dc7e48ae334433d270a64, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
