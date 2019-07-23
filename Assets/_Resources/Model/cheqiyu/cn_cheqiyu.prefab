@@ -455,8 +455,8 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1413879803979246}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: bac123eb7eb1d4938a3242db9bd055ab, type: 3}
-  m_Controller: {fileID: 9100000, guid: c94561c7d1d0f4e2683ef2a897762a2a, type: 2}
+  m_Avatar: {fileID: 9000000, guid: a12b661f716b26d4c8f3768dc387b187, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9623e0e970eb5f44397933b09d80eae1, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -473,11 +473,12 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: bcb62ce8d87394c80ab6efb2c295f6b5, type: 2}
+  - {fileID: 2100000, guid: dac5a886d4df5154db5f105881e55c5b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -488,6 +489,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -500,7 +502,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: bac123eb7eb1d4938a3242db9bd055ab, type: 3}
+  m_Mesh: {fileID: 4300000, guid: a12b661f716b26d4c8f3768dc387b187, type: 3}
   m_Bones:
   - {fileID: 4725291508811056}
   - {fileID: 4765157693302218}
