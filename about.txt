@@ -43,4 +43,7 @@ git fetch --all
 git reset --hard origin/master 
 git pull
 
+删除文件
+git rm 文件名	//删除后需要 commit 添加注释，然后进行 push，否则删除不成功
+
 ###
