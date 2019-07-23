@@ -140,7 +140,7 @@ public partial class BuildPipelinePanel : EditorWindow
             case BuildTarget.iOS:
                 platform = "IOS";
                 break;
-            case BuildTarget.StandaloneOSX:
+		case BuildTarget.StandaloneOSXIntel:
                 platform = "Mac";
                 break;
             case BuildTarget.Android:

@@ -31,13 +31,12 @@ namespace Sacu.Utils
             if (!PlayerPrefs.HasKey("data_version") || PlayerPrefs.GetInt("data_version") != SAGameVersion.Instance.data_version)
             {
                 string random = DateTime.Now.ToString("yyyymmddhhmmss");
-                string versionFile = (SAAppConfig.ConfigRelease ? SAAppConfig.VersionPath : "file:///" + SAAppConfig.DevResDir + SAAppConfig.DataDir) + SAAppConfig.dataTable + "?rd=" + random;
+                string versionFile = (SAAppConfig.ConfigRelease ? SAAppConfig.VersionPath : SAAppConfig.DevResDir + SAAppConfig.DataDir) + SAAppConfig.dataTable + "?rd=" + random;
                 WWW www = new WWW(versionFile);
                 SAUtils.Log(versionFile);
                 yield return www;
-                if (www.error != null)
+				if (www.error != null && www.error.Length > 0)
                 {
-                    SAUtils.LogError("找不到:" + www.url);
                     SAUtils.LogError("error : " + www.error);
                     yield break;
                 }

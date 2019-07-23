@@ -9,11 +9,28 @@
 
 
 
+mac os 更新 git
+避免git可用存储空间不足
+git config --global http.postBuffer 1048576000
+避免带宽过低导致传输中断
+git config --global http.lowSpeedLimit 0
+git config --global http.lowSpeedTime 999999
+
+关于HomeBrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 	//删除HomeBrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"	//安装HomeBrew
+更新git
+brew install git
+重新指向新安装的git
+brew link git --overwrite
+
 unity git
 初始设置
 git config --global core.autocrlf false  //禁用自动转换 
 git init
 git remote add origin https://github.com/sacu/CatchFish.git
+
+git pull https://github.com/sacu/CatchFish.git	//获取地址数据
 
 每次提交设置
 git add 文件或目录

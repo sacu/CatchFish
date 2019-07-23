@@ -36,11 +36,12 @@ namespace Sacu.Utils
         public IEnumerator loadVersion()
         {
             string random = DateTime.Now.ToString("yyyymmddhhmmss");
-            string versionFile = (SAAppConfig.ConfigRelease ? SAAppConfig.VersionPath : "file:///" + SAAppConfig.DevResDir + SAAppConfig.DataDir) + SAAppConfig.versionXML + "?" + random;
+
+			string versionFile = (SAAppConfig.ConfigRelease ? SAAppConfig.VersionPath : SAAppConfig.DevResDir + SAAppConfig.DataDir) + SAAppConfig.versionXML + "?" + random;
             SAUtils.Log(versionFile);
             WWW www = new WWW(versionFile);
             yield return www;
-            if (www.error != null)
+			if (www.error != null && www.error.Length > 0)
             {
                 SAUtils.LogError("error : " + www.error);
                 yield break;
