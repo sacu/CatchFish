@@ -335,10 +335,17 @@ namespace Graphs
                 base.callLuaFun(SAACollection.luaRegisterComplete);//启动完毕
             }
             SAUtils.Log("AssetBundleFactory complete");
-            //GameObject test = Instantiate(SACache.getFBXWithName("fbx/cheqiyu2"));
 
-            GameObject test = Instantiate((GameObject)SACache.getObjectWithName("model/cheqiyu/cheqiyu"));
-            test.GetComponent<Animator>().Play("swim");
+			int w = Screen.width;
+			int h = Screen.height;
+			SAUtils.Log ("width : " + w + " , " + "height : " + h);
+			SAUtils.Log ("result : " + (180 / Math.PI * 0.1555));
+			SAUtils.Log ("result : " + Math.Tan(8.9094));
+
+			StartCoroutine("DoSomething");
+
+            //test = Instantiate((GameObject)SACache.getObjectWithName("model/cheqiyu/cheqiyu"));
+            //test.GetComponent<Animator>().Play("swim");
             
             //ProtoTypeEnum.CLogin.ToString()
             //GameObject test = Instantiate(SACache.getResWithName<GameObject>("Model.FightPanelUI.FightPanelMap"));
@@ -347,5 +354,14 @@ namespace Graphs
             //test.transform.FindChild("FourDimensional").transform.localPosition = new Vector3(0, 0.7f, 0);
             //SALaunch.UIRootCamera.gameObject.SetActive(false);
         }
+		IEnumerator DoSomething () {
+			for (int i = 0; i < 400; ++i) {
+				fish.FishFactory.RandomFish ();
+				fish.FishFactory.RandomFish ();
+				fish.FishFactory.RandomFish ();
+				yield return new WaitForSeconds(1);
+			}
+
+		}
     }
 }
