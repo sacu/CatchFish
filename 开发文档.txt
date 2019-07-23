@@ -36,3 +36,8 @@ git pull https://github.com/sacu/CatchFish.git	//获取地址数据
 git add 文件或目录
 git commit -m "注释"
 git push -u origin master	//提交文件
+
+强制获取远程覆盖本地
+git fetch --all
+git reset --hard origin/master 
+git pull
