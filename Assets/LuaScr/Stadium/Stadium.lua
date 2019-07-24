@@ -13,6 +13,7 @@ end
 --0编辑 1单人 2双人
 function onStart(obj)
 	CS.UnityEngine.Debug.Log("开始捕鱼");
+
 end
 
 function onRegister()

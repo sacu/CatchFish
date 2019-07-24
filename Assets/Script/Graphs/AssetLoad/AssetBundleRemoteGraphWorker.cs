@@ -338,11 +338,8 @@ namespace Graphs
 
 			int w = Screen.width;
 			int h = Screen.height;
-			SAUtils.Log ("width : " + w + " , " + "height : " + h);
-			SAUtils.Log ("result : " + (180 / Math.PI * 0.1555));
-			SAUtils.Log ("result : " + Math.Tan(8.9094));
 
-			StartCoroutine("DoSomething");
+			//StartCoroutine("DoSomething");
 
             //test = Instantiate((GameObject)SACache.getObjectWithName("model/cheqiyu/cheqiyu"));
             //test.GetComponent<Animator>().Play("swim");

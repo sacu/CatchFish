@@ -13,11 +13,11 @@ namespace fish{
 		public static int _hhalf = _h / 2;
 		public static void RandomFish(){
 			string fishName = fishes[UnityEngine.Random.Range (0, fishes.Length - 2)];
-			GameObject test = GameObject.Instantiate((GameObject)SACache.getObjectWithName("model/" + fishName + "/" + fishName));
+			GameObject test = GameObject.Instantiate((GameObject)SACache.getObjectWithName("model/fish/" + fishName));
 			int dir = UnityEngine.Random.Range (0, 3);
 			float pos = UnityEngine.Random.Range (0, _h) - _hhalf;
 			int or = pos > 0 ? 1 : -1;
-			float npos = - pos;
+			float npos = UnityEngine.Random.Range (0, _h) - _hhalf;
 			double angle = (npos > pos ? (npos - pos) / _w : (pos - npos) / _w);
 			angle *= 180/ Math.PI;
 			Vector3 v3 = new Vector3 (0, pos, 0);
