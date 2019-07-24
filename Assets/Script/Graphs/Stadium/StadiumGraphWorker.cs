@@ -51,7 +51,7 @@ namespace Graphs
 			SAUtils.Log ("onRemove");
 		}
 		IEnumerator DoSomething () {
-			for (int i = 0; i < 1; ++i) {
+			for (int i = 0; i < 300; ++i) {
 				fish.FishFactory.RandomFish ();
 				yield return new WaitForSeconds(1);
 			}
