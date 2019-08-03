@@ -52,7 +52,7 @@ namespace Graphs
 		}
 		IEnumerator DoSomething () {
 			for (int i = 0; i < 300; ++i) {
-				fish.FishFactory.RandomFish ();
+				fish.FishFactory.RandomFish (this);
 				yield return new WaitForSeconds(1);
 			}
 		}

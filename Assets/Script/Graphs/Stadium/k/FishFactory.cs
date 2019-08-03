@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sacu.Utils;
 using System;
+using Graphs;
 
 namespace fish{
 	public class FishFactory {
@@ -11,8 +12,9 @@ namespace fish{
 		public static int _h = Screen.height / 32;
 		public static int _whalf = _w / 2;
 		public static int _hhalf = _h / 2;
-		public static void RandomFish(){
-			string fishName = fishes[UnityEngine.Random.Range (0, fishes.Length - 2)];
+		public static void RandomFish(StadiumGraphWorker graph){
+			int type = UnityEngine.Random.Range (0, fishes.Length - 2);
+			string fishName = fishes[type];
 			GameObject test = GameObject.Instantiate((GameObject)SACache.getObjectWithName("model/fish/" + fishName));
 			int dir = UnityEngine.Random.Range (0, 3);
 			float pos = UnityEngine.Random.Range (0, _h) - _hhalf;
@@ -34,7 +36,8 @@ namespace fish{
 
 			test.transform.eulerAngles = q;
 			test.transform.position = v3;
-			test.AddComponent<FishSwim> ();
+			FishSwim fs = test.AddComponent<FishSwim> ();
+			fs.setInfo (graph, type);
 			//test.transform.SetPositionAndRotation(v3, q);
 		}
 

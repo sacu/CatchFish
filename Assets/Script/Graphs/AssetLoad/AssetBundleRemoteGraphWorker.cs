@@ -339,7 +339,6 @@ namespace Graphs
 			int w = Screen.width;
 			int h = Screen.height;
 
-			//StartCoroutine("DoSomething");
 
             //test = Instantiate((GameObject)SACache.getObjectWithName("model/cheqiyu/cheqiyu"));
             //test.GetComponent<Animator>().Play("swim");
@@ -351,14 +350,5 @@ namespace Graphs
             //test.transform.FindChild("FourDimensional").transform.localPosition = new Vector3(0, 0.7f, 0);
             //SALaunch.UIRootCamera.gameObject.SetActive(false);
         }
-		IEnumerator DoSomething () {
-			for (int i = 0; i < 400; ++i) {
-				fish.FishFactory.RandomFish ();
-				fish.FishFactory.RandomFish ();
-				fish.FishFactory.RandomFish ();
-				yield return new WaitForSeconds(1);
-			}
-
-		}
     }
 }

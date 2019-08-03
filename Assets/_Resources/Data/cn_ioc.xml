@@ -13,6 +13,7 @@
   </factory>
   <factory name="StadiumFactory" defaultStart="false">
     <worker name="UI.Stadium.Stadium" isLocal="false" defaultStart="true" type="graph" isActiveDispose="true"/>
+    <worker name="UI.Stadium.StadiumUI" isLocal="false" defaultStart="true" type="graph" isActiveDispose="true"/>
     <worker name="Datas.SocketDataWorker" command=".sock" type="data"/>
   </factory>
   <!--Console factory-->

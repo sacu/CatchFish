@@ -12,7 +12,7 @@ public class ETFXProjectileScript : MonoBehaviour
     public Vector3 impactNormal; //Used to rotate impactparticle.
  
     private bool hasCollided = false;
- 
+	private int power = 400;
     void Start()
     {
         projectileParticle = Instantiate(projectileParticle, transform.position, transform.rotation) as GameObject;
@@ -22,7 +22,12 @@ public class ETFXProjectileScript : MonoBehaviour
         Destroy(muzzleParticle, 1.5f); // Lifetime of muzzle effect.
 		}
     }
-
+	void Update(){
+		if(--power < 0){
+			Destroy(gameObject);
+			Destroy(projectileParticle);
+		}
+	}
 	void OnTriggerEnter(Collider hit)//自己用
 	{
 		if (!hasCollided) {

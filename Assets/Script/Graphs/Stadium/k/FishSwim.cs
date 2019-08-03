@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Sacu.Utils;
+using Graphs;
+using Sacu.Collection;
 
 public class FishSwim : MonoBehaviour {
 
 	private bool hasCollided = false;
 	private int life = 100;
+	private StadiumGraphWorker graph;
+	private int type;
 	// Use this for initialization
 	void Start () {
 		
+	}
+
+	public void setInfo(StadiumGraphWorker graph, int type){
+		this.graph = graph;
+		this.type = type;
 	}
 	
 	// Update is called once per frame
@@ -28,6 +37,7 @@ public class FishSwim : MonoBehaviour {
 		if ((life -= 30) <= 0) {
 			gameObject.GetComponent<Animator> ().Play ("die");
 			gameObject.GetComponent<Collider> ().enabled = false;
+			graph.dispatchEvent (SAACollection.AddScore, type * 10);
 			SAUtils.Log ("加分");
 		}
 	}
