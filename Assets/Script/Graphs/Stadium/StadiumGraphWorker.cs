@@ -18,7 +18,7 @@ namespace Graphs
 			base.init ();
 			GameObject cannon = getGameObjectForName ("cannon");
 			Vector3 pos = cannon.transform.position;
-			pos.y = -hhlaf / 32 + 2;
+			pos.y = -hhlaf / 32 + 1;
 			c = cannon.transform;
 			c.position = pos;
 			SAUtils.Log ("init");

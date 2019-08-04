@@ -17,7 +17,7 @@ function onStart(obj)
 end
 
 function onRegister()
-	graph:addListenerButtonClick("TestBtn", testHandler)
+	graph:addListenerButtonClick("GoBtn", testHandler)
 	--CS.UnityEngine.Debug.Log(CommandCollection.ProtoTypeEnum.STest)
 	CS.UnityEngine.Debug.Log("注册工厂完毕开始");
 	CS.UnityEngine.Debug.Log(enum.STest);
