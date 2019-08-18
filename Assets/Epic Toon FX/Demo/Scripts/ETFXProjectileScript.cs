@@ -2,6 +2,7 @@
 using System.Collections;
  
 using Sacu.Utils;
+using Sacu.Collection;
 public class ETFXProjectileScript : MonoBehaviour
 {
     public GameObject impactParticle;
@@ -12,7 +13,9 @@ public class ETFXProjectileScript : MonoBehaviour
     public Vector3 impactNormal; //Used to rotate impactparticle.
  
     private bool hasCollided = false;
-	private int power = 400;
+
+    public static float _whalf;
+    public static float _hhalf;
     void Start()
     {
         projectileParticle = Instantiate(projectileParticle, transform.position, transform.rotation) as GameObject;
@@ -23,10 +26,12 @@ public class ETFXProjectileScript : MonoBehaviour
 		}
     }
 	void Update(){
-		if(--power < 0){
-			Destroy(gameObject);
-			Destroy(projectileParticle);
-		}
+        Vector3 pos = transform.position;
+        if (pos.x > SAACollection.halfWidth || pos.x < -SAACollection.halfWidth || pos.y > SAACollection.halfHeight || pos.y < -SAACollection.halfHeight)
+        {//判断越界
+            Destroy(gameObject);
+            Destroy(projectileParticle);
+        }
 	}
 	void OnTriggerEnter(Collider hit)//自己用
 	{

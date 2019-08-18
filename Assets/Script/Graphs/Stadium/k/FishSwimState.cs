@@ -5,7 +5,7 @@ using UnityEngine;
 using Sacu.Utils;
 public class FishSwimState : StateMachineBehaviour
 {
-    private int power = 600;
+    //private int power = 600;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -23,14 +23,14 @@ public class FishSwimState : StateMachineBehaviour
     //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
-    override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-        if (--power < 0)
-        {
+    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    //    if (--power < 0)
+    //    {
 			//animator.SetBool("isDie", true);
-            Destroy(animator.GetComponentInParent<Transform>().gameObject);
-        }
+    //        Destroy(animator.GetComponentInParent<Transform>().gameObject);
+    //    }
         //SAUtils.Log("power : " + power);
-    }
+    //}
 
 	// OnStateIK is called right after Animator.OnAnimatorIK(). Code that sets up animation IK (inverse kinematics) should be implemented here.
 	//override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

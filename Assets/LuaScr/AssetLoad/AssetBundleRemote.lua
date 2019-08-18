@@ -22,7 +22,8 @@ function onRegisterComplete()
 	CS.Sacu.Utils.SAUtils.Log("静态表解析完毕");
 	CS.UnityEngine.Debug.Log(graph:getName());
 	graph.factory:disposeFactory()
-	CS.Sacu.Utils.SAManager.Instance:startFactory("MainUIFactory")
+	CS.Sacu.Utils.SAManager.Instance:startFactory("LoginUIFactory")
+	--CS.Sacu.Utils.SAManager.Instance:startFactory("MainUIFactory")
 end
 
 function onRemove()

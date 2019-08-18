@@ -45,9 +45,7 @@ CommandCollection.AccountTypeEnum = {
 		OfflineStr = "Offline.Lua",
 	Online = 1, -- 
 		OnlineStr = "Online.Lua",
-	Battle = 2, -- 
-		BattleStr = "Battle.Lua",
-	Error = 3, -- 
+	Error = 2, -- 
 		ErrorStr = "Error.Lua",
 }
 CommandCollection.TeamTypeEnum = {

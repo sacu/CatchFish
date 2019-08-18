@@ -21,6 +21,16 @@
     <worker name="Datas.SocketDataWorker" command=".sock" type="data"/>
     <worker name="UI.ConsoleUI.ConsoleUI" isLocal="false" defaultStart="true" type="graph" isActiveDispose="true"/>
   </factory>
+  <!--error factory-->
+  <factory name="ErrorCodeFactory" defaultStart="true">
+    <worker name="Datas.SocketDataWorker" command=".sock" type="data"/>
+    <worker name="UI.ErrorCode.ErrorCode" isLocal="false" defaultStart="true" type="graph" isActiveDispose="true"/>
+  </factory>
+  <!--ÐÄÌø-->
+  <factory name="HeartFactory" defaultStart="false">
+    <worker name="Datas.SocketDataWorker" command=".sock" type="data"/>
+    <worker name="UI.Heart.Heart" isLocal="false" defaultStart="true" type="graph" isActiveDispose="true"/>
+  </factory>
 </ioc>
 
 <!--

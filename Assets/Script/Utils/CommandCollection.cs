@@ -28,7 +28,6 @@ namespace Sacu.Utils{
 	public enum AccountTypeEnum {
 		Offline, //
 		Online, //
-		Battle, //
 		Error, //
 	}
 	public enum TeamTypeEnum {

@@ -1,4 +1,5 @@
 ﻿
+using UnityEngine;
 namespace Sacu.Collection
 {
     public class SAACollection
@@ -43,5 +44,20 @@ namespace Sacu.Collection
         public const string luaRemove = "onRemove";//工人从工厂移除
         public const string luaRegisterComplete = "onRegisterComplete";//工厂注册完毕
         public const string luaDispose = "onDispose";//工厂关闭
+
+        //屏幕坐标转世界坐标
+        public static float width;
+        public static float height;
+        public static float halfWidth;
+        public static float halfHeight;
+        public static void initScreenToWorldPoint()
+        {
+            Vector3 rect = new Vector3(Screen.width, Screen.height);
+            rect = Camera.main.ScreenToWorldPoint(rect);
+            halfWidth = rect.x;
+            halfHeight = rect.y;
+            width = halfWidth * 2;
+            height = halfHeight * 2;
+        }
     }
 }

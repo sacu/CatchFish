@@ -4,6 +4,7 @@ using Sacu.Factory.Worker;
 using UnityEngine;
 using System;
 using Sacu.Utils;
+using Sacu.Collection;
 
 namespace Graphs
 {
@@ -16,13 +17,29 @@ namespace Graphs
 		protected override void init()
 		{
 			base.init ();
-			GameObject cannon = getGameObjectForName ("cannon");
+            SAACollection.initScreenToWorldPoint();
+
+            GameObject cannon = getGameObjectForName ("cannon");
 			Vector3 pos = cannon.transform.position;
-			pos.y = -hhlaf / 32 + 1;
-			c = cannon.transform;
+            pos.y = -hhlaf;
+
+            //坐标转换
+            //SAUtils.Log("ScreenToViewportPoint: " + Camera.main.ScreenToViewportPoint(pos).y);//屏幕转视口坐标
+            //SAUtils.Log("ScreenToWorldPoint: " + Camera.main.ScreenToWorldPoint(pos).y);//屏幕转世界坐标
+            //SAUtils.Log("WorldToScreenPoint: " + Camera.main.WorldToScreenPoint(pos).y);//世界转屏幕坐标
+            //SAUtils.Log("ViewportToScreenPoint: " + Camera.main.ViewportToScreenPoint(pos).y);//视口转屏幕坐标
+            //SAUtils.Log("WorldToViewportPoint: " + Camera.main.WorldToViewportPoint(pos).y);//世界转视口坐标
+            //SAUtils.Log("ViewportToWorldPoint: " + Camera.main.ViewportToWorldPoint(pos).y);//视口转世界坐标
+
+            pos = Camera.main.ScreenToWorldPoint(pos);
+            pos.y /= 2;
+            pos.x = pos.z = 0;
+            c = cannon.transform;
 			c.position = pos;
-			SAUtils.Log ("init");
-		}
+
+            SAUtils.Log("pos : " + pos);
+
+        }
 		override protected void mainStart(){
 			base.mainStart ();
 			SAUtils.Log ("mainStart");
@@ -86,7 +103,7 @@ namespace Graphs
 					projectile.transform.position = c.position;
 					projectile.transform.eulerAngles = q;
 					projectile.GetComponent<Rigidbody> ().AddForce (projectile.transform.up * 400);
-					projectile.GetComponent<ETFXProjectileScript> ().impactNormal = Vector3.down;
+					projectile.GetComponent<ETFXProjectileScript> ().impactNormal = Vector3.forward;
 				}
 			}
 		}

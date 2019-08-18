@@ -7,7 +7,7 @@ Shader "SA/BaseTexture"
 		_Shine("Shine", float) = 0.4
 	}
 	SubShader{
-		Tags{ "RenderType" = "Opaque" }
+		Tags{ "RenderType" = "Overlay" "IgnoreProjector" = "True" "RenderType" = "TransparentCutout" }
 		LOD 10
 
 		Pass{

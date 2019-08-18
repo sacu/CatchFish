@@ -38,8 +38,8 @@ end
 function loginHandle()
 	local login = cc.getDataModel(pte.CLogin);
 	su.Console("创建对象成功");
-	login:SetUserName("你好");
-	login:SetPassWord("test");
+	login:SetUserName("sa");
+	login:SetPassWord("sa");
 	local sock = CS.Sacu.Utils.IOCManager.Instance:getIOCDataWorker("Datas.SocketDataWorker")
 	sock:sendMessage(pte.CLogin, login:Build():ToByteArray())
 end
@@ -82,5 +82,9 @@ function getUserInfoHandler(evt)
 	local dao = evt.Body.bytes
 	local userData = cc.getDataModel(pte.SUserData, dao);
 	su.Console("登录成功")
-	su.Log("code:" .. userData.Code)
+	su.Log("用户ID : " .. userData.Id)
+	graph.factory:disposeFactory()
+	CS.Sacu.Utils.SAManager.Instance:startFactory("MainUIFactory")
+	--启动心跳
+	CS.Sacu.Utils.SAManager.Instance:startFactory("HeartFactory")
 end
