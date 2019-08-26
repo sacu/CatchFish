@@ -18,7 +18,7 @@ public class FishDieState : StateMachineBehaviour {
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
         //SAUtils.Log("OnStateExit");
         //animator.GetComponentInParent<Transform>()
-        Destroy(animator.GetComponentInParent<Transform>().gameObject);
+        Destroy(animator.GetComponentInParent<Transform>().GetComponentInParent<Transform>().gameObject);
     }
 
 	// OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

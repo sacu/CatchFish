@@ -6,70 +6,77 @@ using Sacu.Utils;
 using Graphs;
 using Sacu.Collection;
 using System;
+using org.jiira.protobuf;
 
 public class FishSwim : MonoBehaviour {
-
-	private bool hasCollided = false;
-	private int life = 100;
+    private Transform fish;
+    private STFish stfish;
 	private StadiumGraphWorker graph;
-	private int type;
-    
+    private FishData fd;
+    private int life;
+    private bool isRight;
+
     // Use this for initialization
     void Start () {
         
     }
 
-	public void setInfo(StadiumGraphWorker graph, int type)
+	public void setInfo(StadiumGraphWorker graph, FishData fd, long delay)
     {
+        fish = transform.Find(SAAppConfig.Language + "_" + fd.fishID + "s");
+        stfish = STFish.getMap()[fd.fishID];
+        life = stfish.Life;
         this.graph = graph;
-		this.type = type;
-
-        int dir = UnityEngine.Random.Range(0, 3);
-        float pos = UnityEngine.Random.Range(0, SAACollection.height) - SAACollection.halfHeight;
-        int or = pos > 0 ? 1 : -1;
-        float npos = UnityEngine.Random.Range(0, SAACollection.height) - SAACollection.halfHeight;
-        double angle = (npos > pos ? (npos - pos) / SAACollection.width : (pos - npos) / SAACollection.halfWidth);
-        angle *= 180 / Math.PI;
-        Vector3 v3 = new Vector3(0, pos, 0);
-        Vector3 q = new Vector3(0, 0, 0);
-        if (dir == 0)
-        {//left	0
-         //test.transform.
-            v3.x = -SAACollection.halfWidth;
-            q.z = -or * (float)angle;
-            q.y = 180;
+        this.fd = fd;
+        float pos;
+        float npos;
+        isRight = fd.begin < 0;
+        if (isRight)//从右侧出发
+        {
+            pos = SAACollection.height * -fd.begin / 20 - SAACollection.halfHeight;
+            npos = SAACollection.height * fd.end / 20 - SAACollection.halfHeight;
+            transform.position = new Vector3(SAACollection.halfWidth, pos, 0);
+            transform.LookAt(new Vector3(-SAACollection.halfWidth, npos, 0));
+        } else
+        {
+            pos = SAACollection.height * fd.begin / 20 - SAACollection.halfHeight;
+            npos = SAACollection.height * -fd.end / 20 - SAACollection.halfHeight;
+            transform.position = new Vector3(-SAACollection.halfWidth, pos, 0);
+            transform.LookAt(new Vector3(SAACollection.halfWidth, npos, 0));
         }
-        else
-        {//right			1
-            v3.x = SAACollection.halfWidth;
-            q.z = or * (float)angle;
-        }
-
-        transform.eulerAngles = q;
-        transform.position = v3;
+        //矫正位置
+        //transform.Translate(Vector3.forward * stfish.Speed * delay / 1000);
     }
 
     // Update is called once per frame
-    void Update () {
+    void LateUpdate () {
         Vector3 pos = transform.position;
-        if (pos.x > SAACollection.halfWidth || pos.x < -SAACollection.halfWidth || pos.y > SAACollection.halfHeight || pos.y < -SAACollection.halfHeight)
+        if ((!isRight && pos.x > SAACollection.halfWidth) || (isRight && pos.x < -SAACollection.halfWidth))
         {//判断越界
-            Destroy(gameObject);
+            if (gameObject)
+            {
+                graph.dispatchEvent(SAACollection.FishDie, fd);
+                Destroy(gameObject);
+                Destroy(this);
+            }
         } else if (life > 0) {
-			transform.Translate (Vector3.left * 2 * Time.deltaTime);
+			transform.Translate (Vector3.forward * stfish.Speed * Time.deltaTime);
 		} else {
-			Material m = gameObject.GetComponentInChildren<SkinnedMeshRenderer> ().material;
-			float s = m.GetFloat ("_Shine");
-			m.SetFloat ("_Shine", s - 0.002f);
+            if (fish)
+            {
+                Material m = fish.GetComponentInChildren<SkinnedMeshRenderer>().material;
+                float s = m.GetFloat("_Shine");
+                m.SetFloat("_Shine", s - 0.002f);
+            }
 		}
 	}
 
 	public void hit(){
-		if ((life -= 30) <= 0) {
-			gameObject.GetComponent<Animator> ().Play ("die");
-			gameObject.GetComponent<Collider> ().enabled = false;
-			graph.dispatchEvent (SAACollection.AddScore, type * 10);
-			SAUtils.Log ("加分");
-		}
+		if ((life -= 50) <= 0) {
+            fish.GetComponent<Animator> ().Play ("die");
+            fish.GetComponent<Collider> ().enabled = false;
+            graph.dispatchEvent(SAACollection.AddScore, fd);
+            graph.dispatchEvent(SAACollection.FishDie, fd);
+        }
 	}
 }

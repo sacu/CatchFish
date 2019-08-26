@@ -47,7 +47,7 @@ namespace org.jiira.protobuf {
 		}
 		public string[] readArray()
 		{
-			x = iostring.IndexOf(SAProtoDecode.decodeArrayAssign, x) + 1;
+			x = iostring.IndexOf(SAProtoDecode.decodeArrayAssign, x) + SAProtoDecode.decodeArrayAssign.Length;
 			y = iostring.IndexOf(SAProtoDecode.decodeArrayEnd, x);
 			string value = iostring.Substring(x, y - x);
 			x = y + SAProtoDecode.decodeArrayEnd.Length;
@@ -71,7 +71,7 @@ namespace org.jiira.protobuf {
 		public const string SABoolean = "boolean";
 		public const string SAArray = "array";
 		public const string isBooleanStr = "1";
-		public const string splitStr = "\\[\\*]";
+		public const string splitStr = "\\*";
 		public const string decodeAssign = "[:]";
 		public const string decodeSplit = "[,]";
 		public const string decodeEnd = "[}]";
@@ -106,58 +106,106 @@ namespace org.jiira.protobuf {
 		}
 		public static void setIOString(string type, string iostring) {
 			switch (type) {
-				case STCardType: {
-					STCard.parsing(iostring);
+				case STFishType: {
+					STFish.parsing(iostring);
+					break;
+				}
+				case STChapterType: {
+					STChapter.parsing(iostring);
 					break;
 				}
 			}
 		}
-		public const string STCardType = "sTCard";
+		public const string STFishType = "sTFish";
+		public const string STChapterType = "sTChapter";
 	}
-	public class STCard {
-		public STCard() { }
-		private static List<STCard> list;
-		private static Dictionary<int, STCard> map;
-		public static List<STCard> getList() {
+	public class STFish {
+		public STFish() { }
+		private static List<STFish> list;
+		private static Dictionary<int, STFish> map;
+		public static List<STFish> getList() {
 			if (null == list) {
-				list = new List<STCard>();
+				list = new List<STFish>();
 			}
 			return list;
 		}
-		public static Dictionary<int, STCard> getMap() {
+		public static Dictionary<int, STFish> getMap() {
 			if (null == map) {
-				map = new Dictionary<int, STCard>();
+				map = new Dictionary<int, STFish>();
 			}
 			return map;
 		}
 		public static void parsing(string iostring) {
-			List<STCard> list = getList();
-			Dictionary<int, STCard> map = getMap();
+			List<STFish> list = getList();
+			Dictionary<int, STFish> map = getMap();
 			list.Clear();
 			map.Clear();
 			ConvertModel buf = ConvertModel.getInstance();
 			buf.setting(iostring);
-			STCard sTCard;
+			STFish sTFish;
 			while(!buf.limit()) {
-				sTCard= new STCard();
-				sTCard.id = buf.readInt();
-				sTCard.name = buf.readString();
-				sTCard.rare = buf.readInt();
-				sTCard.up = buf.readInt();
-				sTCard.left = buf.readInt();
-				list.Add(sTCard);
-				map.Add(sTCard.Id, sTCard);
+				sTFish= new STFish();
+				sTFish.id = buf.readInt();
+				sTFish.life = buf.readInt();
+				sTFish.name = buf.readString();
+				sTFish.speed = buf.readFloat();
+				sTFish.diamond = buf.readInt();
+				sTFish.coin = buf.readInt();
+				sTFish.prop = buf.readInt();
+				list.Add(sTFish);
+				map.Add(sTFish.Id, sTFish);
 			}
 		}
 		private int id;
 		public int Id {get{return id;}}
+		private int life;
+		public int Life {get{return life;}}
 		private string name;
 		public string Name {get{return name;}}
-		private int rare;
-		public int Rare {get{return rare;}}
-		private int up;
-		public int Up {get{return up;}}
-		private int left;
-		public int Left {get{return left;}}
+		private float speed;
+		public float Speed {get{return speed;}}
+		private int diamond;
+		public int Diamond {get{return diamond;}}
+		private int coin;
+		public int Coin {get{return coin;}}
+		private int prop;
+		public int Prop {get{return prop;}}
+	}
+	public class STChapter {
+		public STChapter() { }
+		private static List<STChapter> list;
+		private static Dictionary<int, STChapter> map;
+		public static List<STChapter> getList() {
+			if (null == list) {
+				list = new List<STChapter>();
+			}
+			return list;
+		}
+		public static Dictionary<int, STChapter> getMap() {
+			if (null == map) {
+				map = new Dictionary<int, STChapter>();
+			}
+			return map;
+		}
+		public static void parsing(string iostring) {
+			List<STChapter> list = getList();
+			Dictionary<int, STChapter> map = getMap();
+			list.Clear();
+			map.Clear();
+			ConvertModel buf = ConvertModel.getInstance();
+			buf.setting(iostring);
+			STChapter sTChapter;
+			while(!buf.limit()) {
+				sTChapter= new STChapter();
+				sTChapter.id = buf.readInt();
+				sTChapter.sOF = buf.readArray();
+				list.Add(sTChapter);
+				map.Add(sTChapter.Id, sTChapter);
+			}
+		}
+		private int id;
+		public int Id {get{return id;}}
+		private string[] sOF;
+		public string[] SOF {get{return sOF;}}
 	}
 }

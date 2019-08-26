@@ -13,7 +13,6 @@ using Sacu.Utils;
 using Sacu.Collection;
 using Sacu.Events;
 using Sacu.Factory.Worker;
-using Sacu.Utils;
 using Utils;
 
 using XLua;

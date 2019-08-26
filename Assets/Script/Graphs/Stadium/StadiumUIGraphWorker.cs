@@ -7,11 +7,11 @@ using Sacu.Utils;
 
 using Sacu.Collection;
 using Sacu.Events;
+using org.jiira.protobuf;
 namespace Graphs
 {
 	public class StadiumUIGraphWorker : SAGraphWorker {
 		private UILabel lblScore;
-		private int score;
 		protected override void init()
 		{
 			base.init ();
@@ -30,8 +30,8 @@ namespace Graphs
 		}
 
 		private void addScoreHandler(SAFactoryEvent action){
-			score+=(int)action.Body;
-			lblScore.text = "分数 : " + score;
+            FishData fd =(FishData)action.Body;
+			lblScore.text = "分数 : " + STFish.getMap()[fd.fishID].Coin;
 		}
 	}
 }

@@ -13,7 +13,9 @@ namespace Sacu.Collection
 
         public const string VERSION = ".version";
 
-		public const string AddScore = "add.score";
+        public const string AddScore = "add.score";
+        public const string FishDie = "fish.die";
+
 
         public const string CommonStr = "common";
         public const int ComminLen = 6;

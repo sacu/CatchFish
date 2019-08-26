@@ -5,19 +5,30 @@ using UnityEngine;
 using System;
 using Sacu.Utils;
 using Sacu.Collection;
-
+using org.jiira.protobuf;
+using fish;
+using Sacu.Events;
+using Datas;
 namespace Graphs
 {
-	public class StadiumGraphWorker : SAGraphWorker {
-		private int hhlaf = Screen.height / 2;
+	public class StadiumGraphWorker : SAGraphWorker
+    {
+        private SocketDataWorker sock;
+        private int hhlaf = Screen.height / 2;
 		private Transform c;
 		private const int mt = 10;
 		private int ct = 0;
 		private string[] bullets = {"BulletSmallBlueOBJ", "NovaFireOBJ", "MysticWhiteOBJ"};
-		protected override void init()
+
+        private SFishChapter.Builder fishChapter;
+        private FishTarget ft;//当前场景
+        private Dictionary<int, FishData> sofVO;//list移除对象不好用
+        protected override void init()
 		{
 			base.init ();
             SAACollection.initScreenToWorldPoint();
+
+            sock = (SocketDataWorker)IOCManager.Instance.getIOCDataWorker("Datas.SocketDataWorker");
 
             GameObject cannon = getGameObjectForName ("cannon");
 			Vector3 pos = cannon.transform.position;
@@ -36,10 +47,9 @@ namespace Graphs
             pos.x = pos.z = 0;
             c = cannon.transform;
 			c.position = pos;
-
-            SAUtils.Log("pos : " + pos);
-
+            
         }
+        
 		override protected void mainStart(){
 			base.mainStart ();
 			SAUtils.Log ("mainStart");
@@ -59,20 +69,69 @@ namespace Graphs
 		override protected void onRegister()
 		{
 			base.onRegister ();
-			StartCoroutine("DoSomething");
-			SAUtils.Log ("onRegister");
-		}
-		override protected void onRemove()
+            //addEventDispatcherWithHandle(SAACollection.NewTarget, newTargetHandler);
+            addEventDispatcherWithHandle(SAACollection.FishDie, fishDieHandler);
+            addEventDispatcherWithHandle(CommandCollection.Sock + ProtoTypeEnum.SFishChapter, fishChapterHandler);
+            //获取房间信息
+            CEnterRoom.Builder enterRoom = CEnterRoom.CreateBuilder();
+            sock.sendMessage(ProtoTypeEnum.CEnterRoom, enterRoom.Build().ToByteArray());
+            SAUtils.Log ("onRegister");
+        }
+        private void fishChapterHandler(SAFactoryEvent action)
+        {
+            SASocketDataDAO sdd = (SASocketDataDAO)action.Body;
+            fishChapter = (SFishChapter.Builder)CommandCollection.getDataModel(ProtoTypeEnum.SFishChapter, sdd.bytes);
+            //关卡信息
+            Dictionary<int, STChapter> chapterMap = STChapter.getMap();
+            STChapter chapterData = chapterMap[fishChapter.ChapterID];//关卡信息
+            string[] fishData = chapterData.SOF;//关卡鱼群
+            List<FishData> sof = new List<FishData>();//关卡鱼群数据整理
+            sofVO = new Dictionary<int, FishData>();
+            FishData fd;
+            int len = fishChapter.FishListCount;//只遍历存活的鱼群下标
+            int exist;//存活鱼的序号
+            for (int i = 0; i < len; ++i)//排列大小
+            {
+                exist = fishChapter.GetFishList(i);
+                fd = new FishData(exist, fishData[exist]);//找到存活的鱼数据
+                sof.Add(fd);
+                sofVO.Add(exist, fd);
+            }
+            sof.Sort((FishData f1, FishData f2) => //从小到大
+            {
+                return f1.delay - f2.delay;
+            });
+            ft = gameObject.GetComponent<FishTarget>();
+            if (null != ft)
+            {
+                ft.close();
+                Destroy(ft);
+            }
+
+            ft = gameObject.AddComponent<FishTarget>();
+            ft.init(this, fishChapter.StartTime, fishChapter.CurrentTime, sof);
+        }
+
+        private void fishDieHandler(SAFactoryEvent action)
+        {
+            FishData fs = (FishData)action.Body;
+            if (sofVO.ContainsKey(fs.id))
+            {
+                sofVO.Remove(fs.id);
+            }
+            
+            if (sofVO.Count == 0)//发送挂起
+            {
+                CHangUpRoom.Builder hangUpRoom = CHangUpRoom.CreateBuilder();
+                sock.sendMessage(ProtoTypeEnum.CHangUpRoom, hangUpRoom.Build().ToByteArray());
+            }
+        }
+        override protected void onRemove()
 		{
 			base.onRemove ();
 			SAUtils.Log ("onRemove");
 		}
-		IEnumerator DoSomething () {
-			for (int i = 0; i < 300; ++i) {
-				fish.FishFactory.RandomFish (this);
-				yield return new WaitForSeconds(1);
-			}
-		}
+		
 		void Update()
 		{
 			Vector3 pos = Input.mousePosition;

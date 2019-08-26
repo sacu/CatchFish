@@ -37,19 +37,15 @@ public class ETFXProjectileScript : MonoBehaviour
 	{
 		if (!hasCollided) {
 			if (hit.gameObject.tag == "fish") {//掉血
-				hit.gameObject.GetComponent<FishSwim>().hit();
+                hit.gameObject.GetComponentInParent<FishSwim>().hit();
 			}
 			removeParticle ();
 		}
 	}
 	void OnCollisionEnter(Collision hit)
 	{
-			SAUtils.Log ("33333");
-
         if (!hasCollided)
         {
-            
- 
             if (hit.gameObject.tag == "Destructible") // Projectile will destroy objects tagged as Destructible
             {
                 Destroy(hit.gameObject);

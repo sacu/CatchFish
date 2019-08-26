@@ -6,7 +6,6 @@ SAProtoDecode = {
 	SAArray = "array",
 	isBooleanStr = "1",
 	----------通用
-	splitStr = "\\[\\*]",
 	decodeAssign = "[:]",
 	decodeSplit = "[,]",
 	decodeEnd = "[}]",
@@ -102,27 +101,48 @@ function SAProtoClass()
 	return class_type
 end
 SAProtoDecode.setIOString = function(type, iostring)
-	if SAProtoDecode.STCardType == type then
-		STCard.parsing(iostring)
+	if SAProtoDecode.STFishType == type then
+		STFish.parsing(iostring)
+	elseif SAProtoDecode.STChapterType == type then
+		STChapter.parsing(iostring)
 	end
 end
-STCard = SAProtoClass()
-SAProtoDecode.STCardType = "sTCard"
-STCard.parsing = function(iostring)
-	STCard.sTCards = {}
+STFish = SAProtoClass()
+SAProtoDecode.STFishType = "sTFish"
+STFish.parsing = function(iostring)
+	STFish.sTFishs = {}
 	ConvertModel.setting(iostring, 0, 0)
-	STCard.list = {}
-	STCard.map = {}
+	STFish.list = {}
+	STFish.map = {}
 	local i = 0
 	while not ConvertModel.limit() do
-		local sTCard= SAProtoClass()
-		sTCard.Id = ConvertModel.readInt()
-		sTCard.Name = ConvertModel.readString()
-		sTCard.Rare = ConvertModel.readInt()
-		sTCard.Up = ConvertModel.readInt()
-		sTCard.Left = ConvertModel.readInt()
-		table.insert(STCard.list, i, sTCard)
-		STCard.map[sTCard.Id] = sTCard
+		local sTFish= SAProtoClass()
+		sTFish.Id = ConvertModel.readInt()
+		sTFish.Life = ConvertModel.readInt()
+		sTFish.Name = ConvertModel.readString()
+		sTFish.Speed = ConvertModel.readFloat()
+		sTFish.Diamond = ConvertModel.readInt()
+		sTFish.Coin = ConvertModel.readInt()
+		sTFish.Prop = ConvertModel.readInt()
+		table.insert(STFish.list, i, sTFish)
+		STFish.map[sTFish.Id] = sTFish
+		i = i + 1
+	end
+end
+STChapter = SAProtoClass()
+SAProtoDecode.STChapterType = "sTChapter"
+STChapter.parsing = function(iostring)
+	STChapter.sTChapters = {}
+	ConvertModel.setting(iostring, 0, 0)
+	STChapter.list = {}
+	STChapter.map = {}
+	local i = 0
+	while not ConvertModel.limit() do
+		local sTChapter= SAProtoClass()
+		sTChapter.Id = ConvertModel.readInt()
+		sTChapter.SOF = ConvertModel.readArray()
+		table.insert(STChapter.list, i, sTChapter)
+		STChapter.map[sTChapter.Id] = sTChapter
 		i = i + 1
 	end
 end

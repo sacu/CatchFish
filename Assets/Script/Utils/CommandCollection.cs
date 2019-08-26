@@ -4,6 +4,11 @@ namespace Sacu.Utils{
 	public enum ProtoTypeEnum {
 		CLogin, //
 		SUserData, //
+		CEnterRoom, //
+		COutRoom, //
+		SOutRoom, //
+		SFishChapter, //
+		CHangUpRoom, //
 		SError, //
 		SSingleUpdate, //
 		CTest, //
@@ -11,9 +16,10 @@ namespace Sacu.Utils{
 		CHeart, //
 	}
 	public enum GameTypeEnum {
-		Leisure, //休闲模式
-		Competition, //竞技模式
-		Gay, //约战
+		None, //无
+		FishSimple, //初级捕鱼
+		FishOrdinary, //中级捕鱼
+		FishDifficultie, //高级捕鱼
 	}
 	public enum RankTypeEnum {
 		Leisure, //
@@ -70,18 +76,13 @@ namespace Sacu.Utils{
 		NickNameExistError, //昵称已存在
 		AccountIsFoundError, //用户已存在
 		AccountCreateError, //用户创建失败
-		CardGroupError, //卡组设置失败
-		BuyCardError, //卡牌合成失败
-		SellCardError, //卡牌分解失败
-		MatchRivalError, //请求匹配失败
-		CancelMatchError, //取消匹配失败
-		SettingDefaultCardGroupError, //默认卡组设置失败
 		AccountError, //帐号异常
 		RepeatLoginError, //帐号已在登录状态
 		AccountOfflineError, //目标用户是离线状态
 		BalanceIsNotEnoughError, //余额不足
 		DataBaseError, //数据库操作失败
-		CoolingTimeDidNoArriveError, //冷却时间未结束
+		NoFoundFishRoomError, //房间不存在
+		NoJoinFishRoomError, //没有加入这个房间
 		FirendListError, //获取好友列表失败
 		FirendInfoError, //获取好友信息失败
 		AddFirendError, //添加好友失败
@@ -194,6 +195,8 @@ namespace Sacu.Utils{
 		public const string Sock = ".sock";
 		public const string DB_ID_BASETABLE = "gamedb";
 		public const bool EnableAutocommit = true;
+		public const int FISH_ROOM_MAX = 1000;
+		public const int FISH_ROOM_USER_MAX = 4;
 		public const int SOCK_TYPE_LENGTH = 2;
 		public const int SOCK_CONTEXT_LENGTH = 2;
 		public const int SOCK_HEAD_LENGTH = 4;
@@ -224,6 +227,66 @@ namespace Sacu.Utils{
 						model.MergeFrom(bytes);
 					} else {
 						model = SUserData.ParseFrom(bytes).ToBuilder();
+						dataModel.Add(type, model);
+					}
+					return model;
+				}
+				case ProtoTypeEnum.CEnterRoom:{
+					CEnterRoom.Builder model;
+					if(dataModel.ContainsKey(type)){
+						model = (CEnterRoom.Builder)dataModel[type];
+						model.Clear();
+						model.MergeFrom(bytes);
+					} else {
+						model = CEnterRoom.ParseFrom(bytes).ToBuilder();
+						dataModel.Add(type, model);
+					}
+					return model;
+				}
+				case ProtoTypeEnum.COutRoom:{
+					COutRoom.Builder model;
+					if(dataModel.ContainsKey(type)){
+						model = (COutRoom.Builder)dataModel[type];
+						model.Clear();
+						model.MergeFrom(bytes);
+					} else {
+						model = COutRoom.ParseFrom(bytes).ToBuilder();
+						dataModel.Add(type, model);
+					}
+					return model;
+				}
+				case ProtoTypeEnum.SOutRoom:{
+					SOutRoom.Builder model;
+					if(dataModel.ContainsKey(type)){
+						model = (SOutRoom.Builder)dataModel[type];
+						model.Clear();
+						model.MergeFrom(bytes);
+					} else {
+						model = SOutRoom.ParseFrom(bytes).ToBuilder();
+						dataModel.Add(type, model);
+					}
+					return model;
+				}
+				case ProtoTypeEnum.SFishChapter:{
+					SFishChapter.Builder model;
+					if(dataModel.ContainsKey(type)){
+						model = (SFishChapter.Builder)dataModel[type];
+						model.Clear();
+						model.MergeFrom(bytes);
+					} else {
+						model = SFishChapter.ParseFrom(bytes).ToBuilder();
+						dataModel.Add(type, model);
+					}
+					return model;
+				}
+				case ProtoTypeEnum.CHangUpRoom:{
+					CHangUpRoom.Builder model;
+					if(dataModel.ContainsKey(type)){
+						model = (CHangUpRoom.Builder)dataModel[type];
+						model.Clear();
+						model.MergeFrom(bytes);
+					} else {
+						model = CHangUpRoom.ParseFrom(bytes).ToBuilder();
 						dataModel.Add(type, model);
 					}
 					return model;
@@ -302,6 +365,21 @@ namespace Sacu.Utils{
 					case ProtoTypeEnum.SUserData:{
 						return SUserData.CreateBuilder();
 				}
+					case ProtoTypeEnum.CEnterRoom:{
+						return CEnterRoom.CreateBuilder();
+				}
+					case ProtoTypeEnum.COutRoom:{
+						return COutRoom.CreateBuilder();
+				}
+					case ProtoTypeEnum.SOutRoom:{
+						return SOutRoom.CreateBuilder();
+				}
+					case ProtoTypeEnum.SFishChapter:{
+						return SFishChapter.CreateBuilder();
+				}
+					case ProtoTypeEnum.CHangUpRoom:{
+						return CHangUpRoom.CreateBuilder();
+				}
 					case ProtoTypeEnum.SError:{
 						return SError.CreateBuilder();
 				}
@@ -328,6 +406,21 @@ namespace Sacu.Utils{
 				}
 				case ProtoTypeEnum.SUserData:{
 					return ((SUserData.Builder)model).Build().ToByteArray();
+				}
+				case ProtoTypeEnum.CEnterRoom:{
+					return ((CEnterRoom.Builder)model).Build().ToByteArray();
+				}
+				case ProtoTypeEnum.COutRoom:{
+					return ((COutRoom.Builder)model).Build().ToByteArray();
+				}
+				case ProtoTypeEnum.SOutRoom:{
+					return ((SOutRoom.Builder)model).Build().ToByteArray();
+				}
+				case ProtoTypeEnum.SFishChapter:{
+					return ((SFishChapter.Builder)model).Build().ToByteArray();
+				}
+				case ProtoTypeEnum.CHangUpRoom:{
+					return ((CHangUpRoom.Builder)model).Build().ToByteArray();
 				}
 				case ProtoTypeEnum.SError:{
 					return ((SError.Builder)model).Build().ToByteArray();
